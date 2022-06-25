@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background: linear-gradient(to bottom right, #211682, #4C3575);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.drum-machine {
+  display: flex;
+  height: 300px;
+  min-width: 800px;
+  padding: 20px;
+  background: #7858A6;
+}
+
+.drum-pad-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  height: 100%;
+}
+
+.drum-pad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background: #4C3575;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.control-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  padding: 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.toggle-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+.toggle-slider {
+  position: relative;
+  width: 40px;
+  height: 15px;
+  background: black;
+  margin-top: 5px;
+}
+
+.toggle-button {
+  width: 20px;
+  height: 15px;
+  background: red;
+}
+
+.toggle-button:hover {
+  cursor: pointer;
+}
+
+.drum-pad:hover {
+  cursor: pointer;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  background: #4C3575;
+  color: white;
+  font-size: 1.25rem;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 70%;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+                        /***** Track Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #37264A;
+  height: 0.5rem;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+  background: #37264A;
+  height: 0.5rem;
+}
+
+                        /***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -12px; /* Centers thumb on the track */
+  background-color: red;
+  height: 2rem;
+  width: .75rem;    
+}
+
+                        /***** Thumb Styles *****/
+/***** Firefox *****/
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+  background-color: red;
+  height: 2rem;
+  width: 1rem;
+}
+
+/* .volume-container {
+  position: relative;
+  width: 225px;
+  height: 20px;
+}
+
+.volume-slider {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 225px;
+  height: 10px;
+  background: #37264A;
+}
+
+.volume-position {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background: red;
+  border: solid 1px red;
+} */
