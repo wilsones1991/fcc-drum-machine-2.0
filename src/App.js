@@ -120,7 +120,7 @@ function App() {
   // Helper functions
 
   const keyboardPlaySample = (key) => {
-    playSample(key.key)
+    playSample(key.key.toUpperCase())
   }
 
   const playSample = (key) => {
